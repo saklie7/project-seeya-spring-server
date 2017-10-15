@@ -16,7 +16,7 @@ import com.seeya.member.model.Member;
 @Mapper
 public interface MemberMapper {
 
-	@Insert("INSERT INTO member(memberid, password, membername) VALUES(#{memberid}, #{password}, #{membername})")
+	@Insert("INSERT INTO member(memberid, password, email) VALUES(#{memberid}, #{password}, #{email})")
 	public int insert(Member member);
 
 	@Update("update member set password=#{password}, membername=#{membername}, comment=#{comment} where memberid=#{memberid}")

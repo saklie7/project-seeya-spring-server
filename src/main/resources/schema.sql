@@ -4,12 +4,8 @@ drop table if exists board;
 create table member(
 	memberid varchar(100) not null primary key,
 	password varchar(100) not null,
-	lastName varchar(10) not null,
-	firstName varchar(20) not null,
-	job varchar(50),
-	email varchar(50),
-	nickName varchar(100) not null,
-	comment varchar(2000) not null default 'Hello~!!'
+	nickName varchar(100) not null default 'novice',
+	email varchar(50)
 );
 
 create table board (

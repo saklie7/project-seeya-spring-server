@@ -26,5 +26,8 @@ public interface BoardMapper {
 	
 	@Update("UPDATE board SET hit_cnt=hit_cnt+1 WHERE bno=#{bno}")
 	public int incrementCnt(long bno);
+	
+	@Select("SELECT * FROM board WHERE writer=#{writer} ORDER BY reg_date")
+	public List<Board> getBoardListByWriter(String writer);
 
 }
