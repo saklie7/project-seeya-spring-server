@@ -23,7 +23,7 @@ public class LoginController {
 	@PostMapping("seeya/login")
 	public Object postMemberLogin(@RequestBody Login login) {
 		loginService.checkMemeberLogin(login);
-		System.out.println(login);
+		System.out.println("1 : "+login);
 		Member member = new Member();
 		if(login.getError() == null) {
 			member = memberMapper.selectByMemberId(login.getMemberid());

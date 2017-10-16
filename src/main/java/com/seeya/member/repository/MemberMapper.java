@@ -16,7 +16,7 @@ import com.seeya.member.model.Member;
 @Mapper
 public interface MemberMapper {
 
-	@Insert("INSERT INTO member(memberid, password, email) VALUES(#{memberid}, #{password}, #{email})")
+	@Insert("INSERT INTO member(memberid, password, email, nickname) VALUES(#{memberid}, #{password}, #{email}, #{nickname})")
 	public int insert(Member member);
 
 	@Update("update member set password=#{password}, membername=#{membername}, comment=#{comment} where memberid=#{memberid}")
@@ -42,6 +42,9 @@ public interface MemberMapper {
 	@Select("select * from member where memberid=#{memberid}")
 	@Results(id="memberResultMap", value= {
 			@Result(property="memberid", column="memberid"),
-			@Result(property="password", column="password") })
+			@Result(property="password", column="password"),
+			@Result(property="email", column="email"),
+			@Result(property="nickname", column="nickname")
+	})
 	public Member selectByMemberId(String memberid);
 }
